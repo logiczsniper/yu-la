@@ -19,28 +19,28 @@ const menuItems: MenuItem[] = [
     text: "About Us",
     iconName: "info",
     iconSize: 18,
-    isActive: Astro.url.pathname === "/en/about",
+    isActive: Astro.url.pathname.includes("/en/about"),
   },
   {
     href: "/en/price",
     text: "Price List",
     iconName: "price",
     iconSize: 17,
-    isActive: Astro.url.pathname === "/en/price",
+    isActive: Astro.url.pathname.includes("/en/price"),
   },
   {
     href: "/en/location",
     text: "Location",
     iconName: "map",
     iconSize: 18,
-    isActive: Astro.url.pathname === "/en/location",
+    isActive: Astro.url.pathname.includes("/en/location"),
   },
   {
     href: "/en/contact",
     text: "Contact",
     iconName: "contact",
     iconSize: 16,
-    isActive: Astro.url.pathname === "/en/contact",
+    isActive: Astro.url.pathname.includes("/en/contact"),
   },
 ];
 
