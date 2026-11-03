@@ -52,6 +52,13 @@ import Reviews from "../../components/Reviews.astro";
       font-family: "Noto Sans JP", sans-serif;
     }
 
+    @media (width > 768px) {
+      body {
+        margin: 6vw auto;
+        max-width: calc(768px - 6vw * 2);
+      }
+    }
+
     hr {
       width: 10%;
       margin: 2rem 0;

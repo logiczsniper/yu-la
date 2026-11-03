@@ -71,18 +71,20 @@ const {
       align-items: center;
 
       #title {
-        height: 16vw;
+        height: min(16vw, 100px);
       }
     }
   }
 
   #storefront-container.big {
     #storefront {
-      height: 80vw;
+      height: 60vh;
     }
 
     #title-container {
-      --title-height: 20vw;
+      #title {
+        height: min(30vw, 140px);
+      }
     }
   }
 </style>
