@@ -2,11 +2,9 @@
 
 <br />
 
-Hair & makeup salon based in Putney, London.
+Salon in London, UK.
 
-### Modules
-
-|||
+| Module | is... |
 |------|---------|
 | `ui` | Website built with Astro
 | `firebase` (coming soon) | Cloud functions & storage built with Google Firebase |
