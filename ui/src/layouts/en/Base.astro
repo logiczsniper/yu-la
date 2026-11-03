@@ -1,0 +1,62 @@
+---
+import Reviews from "../../components/Reviews.astro";
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Yu-La Salon</title>
+  </head>
+  <body>
+    <slot />
+    <footer>
+      <hr />
+      <Reviews />
+      <address>
+        <p>
+          Yu-la Hair &amp; Make Up - Unisex Japanese Hairdresser in Putney,
+          Barns &amp; Wandsworth<br />
+          Address: 207 Upper Richmond Road, London SW15 6SQ<br />
+          Tel: <a href="tel:+442087803490">+44 (0) 20 8780 3490</a> | Email: <a
+            href="mailto:info@yu-lasalon.com">info@yu-lasalon.com</a
+          >
+        </p>
+      </address>
+
+      <small>
+        No reproduction or republication without written permission.
+        <br />
+        © Copyright yu-lasalon.com All Rights Reserved.
+      </small>
+    </footer>
+  </body>
+</html>
+
+<style>
+  body {
+    margin: 6vw;
+    font-family: Arial, sans-serif;
+  }
+
+  hr {
+    width: 10%;
+    margin: 2rem 0;
+  }
+
+  footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 0.8rem;
+  }
+
+  @view-transition {
+    navigation: auto;
+  }
+</style>

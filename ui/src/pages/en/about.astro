@@ -1,0 +1,41 @@
+---
+import Content from "../../layouts/en/Content.astro";
+import title from "../../assets/title.webp";
+import tools from "../../assets/tools.webp";
+---
+
+<Content titleImage={title}>
+  <div id="about-text">
+    <p>
+      Yu-la salon is a Japanese and International Hairdresser located in
+      London's Putney. We provide great hair services in a relaxing and
+      refreshing atmosphere.
+    </p>
+    <p>
+      Yu-la offers beautiful styling, hair cutting, colouring and Straightening
+      Perm services for male and female - using specially imported products from
+      Japan.
+    </p>
+    <p>
+      We are proud of our hair care and unique customer service to make sure all
+      the clients are satisfied and feel fantastic.
+    </p>
+    <p>
+      In Yu-la, we offer you the ultimate hairdressing experiences just perfect
+      for you.
+    </p>
+    <p>We are looking forward to your visit.</p>
+    <img src={tools.src} width="320px" alt="img" />
+  </div>
+</Content>
+
+<style>
+  #about-text {
+    font-size: 0.8rem;
+    text-align: center;
+
+    img {
+      margin-top: 1rem;
+    }
+  }
+</style>

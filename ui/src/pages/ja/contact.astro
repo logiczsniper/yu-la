@@ -1,0 +1,68 @@
+---
+import { Icon } from "astro-icon/components";
+import Content from "../../layouts/ja/Content.astro";
+import title from "../../assets/title-ja.webp";
+---
+
+<Content titleImage={title}>
+  <div id="contact-text">
+    <h4>
+      <Icon width={16} height={16} name="address" />住所
+    </h4>
+    <p>
+      207 Upper Richmond Road, London SW15 6SQ [
+      <a
+        href="https://www.google.com/maps/place/207+Upper+Richmond+Road,+London+SW15+6SQ/@51.483333,-0.25,17z/data=!3m1!4b1!4m5!3m4!1s0x48761b4f4f4f4f4f:0x4f4f4f4f4f4f4f4f!8m2!3d51.483333!4d-0.25"
+        target="_blank"
+        rel="noreferrer"
+      >
+        Google Maps ↗
+      </a>
+      ]
+    </p>
+    <h4>
+      <Icon width={16} height={16} name="phone" />電話番号
+    </h4>
+    <p><a href="tel:+442087803490">+44 (0) 20 8780 3490</a></p>
+    <h4>
+      <Icon width={16} height={16} name="email" />メールアドレス
+    </h4>
+    <p><a href="mailto:info@yu-lasalon.com">info@yu-lasalon.com</a></p>
+    <h4>
+      <Icon width={16} height={16} name="clock" />営業時間
+    </h4>
+    <p>火曜日〜土曜日：10:00〜20:00<br />日曜日・月曜日：定休日</p>
+  </div>
+</Content>
+
+<style>
+  #contact-text {
+    font-size: 0.8rem;
+
+    h4 {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 0;
+      padding-bottom: 0.3rem;
+      font-family: "Noto Serif JP", serif;
+      border-bottom: 1px solid #ddd;
+
+      svg {
+        color: #ddd;
+      }
+    }
+
+    h4:not(:first-child) {
+      margin-top: 1.6rem;
+    }
+
+    a {
+      text-wrap: nowrap;
+    }
+
+    img {
+      margin-top: 1rem;
+    }
+  }
+</style>

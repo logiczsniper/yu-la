@@ -1,0 +1,103 @@
+---
+import { Icon } from "astro-icon/components";
+
+type Review = {
+  username: string;
+  rating: number;
+};
+
+const reviews: Review[] = [
+  { username: "G - g", rating: 5 },
+  { username: "Louise S", rating: 5 },
+  { username: "goodbye kitty", rating: 5 },
+  { username: "seo kim", rating: 5 },
+  { username: "Fiona", rating: 5 },
+  { username: "Helen", rating: 5 },
+  { username: "WL", rating: 5 },
+  { username: "Syed Bokhari", rating: 5 },
+  { username: "Serene Allen", rating: 5 },
+  { username: "S M", rating: 5 },
+  { username: 'Saki "Soak" OKUGAWA', rating: 5 },
+  { username: "DONGHYUN Kim", rating: 5 },
+  { username: "Hilda X", rating: 5 },
+  { username: "YUHO TANAKA", rating: 5 },
+  { username: "Kai Matsuura", rating: 5 },
+  { username: "Lazy Bones", rating: 5 },
+  { username: "Rickey Liao", rating: 5 },
+  { username: "Crystal Chu", rating: 5 },
+  { username: "Stella Liu", rating: 5 },
+  { username: "Jian Jeffrey Jing", rating: 5 },
+  { username: "Jawaad Khan", rating: 5 },
+  { username: "Lila Saggi", rating: 5 },
+];
+---
+
+<section class="reviews-container">
+  <div class="reviews-track">
+    {
+      Array.from({ length: 2 }).map((_, index) => (
+        <div class="reviews" aria-hidden={index === 1 ? "true" : undefined}>
+          {reviews.map((review) => (
+            <div class="review">
+              <small>{review.username}</small>
+              <div>
+                {Array.from({ length: review.rating }).map(() => (
+                  <Icon name="star" color="GoldenRod" />
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+      ))
+    }
+  </div>
+</section>
+
+<style>
+  .reviews-container {
+    width: 100vw;
+    overflow: hidden;
+    margin: 1rem 0;
+  }
+
+  .reviews-track {
+    display: flex;
+    width: max-content;
+    animation: scroll 60s linear infinite;
+    will-change: transform;
+  }
+
+  .reviews {
+    display: flex;
+    flex-shrink: 0;
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  .review {
+    box-sizing: border-box;
+    flex: 0 0 150px;
+
+    small {
+      font-size: 0.6rem;
+      letter-spacing: 0.1rem;
+      color: #4f4f4f;
+    }
+  }
+
+  @keyframes scroll {
+    from {
+      transform: translateX(0);
+    }
+
+    to {
+      transform: translateX(-50%);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .reviews-track {
+      animation: none;
+    }
+  }
+</style>

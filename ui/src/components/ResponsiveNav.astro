@@ -1,0 +1,131 @@
+---
+import { Icon } from "astro-icon/components";
+
+type Props = {
+  headingText: string;
+};
+
+const { headingText } = Astro.props as Props;
+---
+
+<script>
+  const sidebar = document.getElementById("sidebar") as HTMLDialogElement;
+  const openButton = document.getElementById("openButton");
+  const closeButton = document.getElementById("closeButton");
+
+  // Open as modal to block interaction with page background
+  openButton?.addEventListener("click", () => {
+    sidebar?.showModal();
+  });
+
+  // Close normally
+  closeButton?.addEventListener("click", () => {
+    sidebar?.close();
+  });
+</script>
+
+<nav>
+  <div id="large-nav">
+    <slot name="menu" />
+  </div>
+  <div id="small-nav">
+    <heading>
+      <Icon name="menu" width="22" height="22" id="openButton" />
+      <h3>{headingText}</h3>
+    </heading>
+    <dialog id="sidebar">
+      <div class="sidebarContent">
+        <Icon name="close" width="26" height="26" id="closeButton" />
+        <slot name="menu" />
+      </div>
+    </dialog>
+  </div>
+</nav>
+
+<style>
+  @media (width > 600px) {
+    #small-nav {
+      display: none;
+    }
+  }
+
+  @media (width <= 600px) {
+    #large-nav {
+      display: none;
+    }
+  }
+
+  heading {
+    display: grid;
+    grid-template-columns: 1fr 4fr 1fr;
+    width: 100%;
+    align-items: center;
+    text-align: center;
+
+    h3 {
+      margin: 0;
+      font-family: "Noto Serif JP", serif;
+    }
+  }
+
+  #openButton {
+    cursor: pointer;
+  }
+
+  #closeButton {
+    display: block;
+    margin-left: auto;
+    cursor: pointer;
+  }
+
+  #sidebar {
+    display: flex;
+    flex-direction: column;
+    border: none;
+    border-radius: 10px;
+    padding: 0;
+    width: min-content;
+    /* height: 30vh; */
+    max-height: 100vh;
+    margin: 34px auto 0 0;
+    inset: 0 auto 0 0;
+    will-change: transform;
+    transition:
+      transform 0.3s ease,
+      display 0.3s ease allow-discrete,
+      overlay 0.3s ease allow-discrete;
+    transform: translateX(-100%);
+
+    .sidebarContent {
+      padding: 1rem;
+    }
+  }
+
+  #sidebar[open] {
+    transform: translateX(34px);
+  }
+
+  @starting-style {
+    #sidebar[open] {
+      transform: translateX(-100%);
+    }
+  }
+
+  #sidebar::backdrop {
+    background-color: rgba(0, 0, 0, 0);
+    transition:
+      background-color 0.3s ease,
+      display 0.3s ease allow-discrete,
+      overlay 0.3s ease allow-discrete;
+  }
+
+  #sidebar[open]::backdrop {
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+
+  @starting-style {
+    #sidebar[open]::backdrop {
+      background-color: rgba(0, 0, 0, 0);
+    }
+  }
+</style>

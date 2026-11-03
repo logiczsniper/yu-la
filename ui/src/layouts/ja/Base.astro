@@ -1,0 +1,73 @@
+---
+import Reviews from "../../components/Reviews.astro";
+---
+
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Yu-La サロン</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=LINE+Seed+JP:wght@100;400;700;800&family=Noto+Sans+JP:wght@100..900&family=Noto+Serif+JP:wght@200..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <slot />
+    <footer>
+      <hr />
+      <Reviews />
+      <address>
+        <p>
+          Yu-la ヘアー＆メイクアップ
+          パトニー、バーンズ＆ワンズワースの男女兼用日系美容室
+          <br />
+          住所：207 Upper Richmond Road, London SW15 6SQ<br />
+          電話番号：<a href="tel:+442087803490">+44 (0) 20 8780 3490</a> | Eメール：
+          <a href="mailto:info@yu-lasalon.com">info@yu-lasalon.com</a>
+        </p>
+      </address>
+
+      <small>
+        当サイトで使用している写真および文章の無断での二次利用・転載を固く禁じます。
+        <br />
+        © Copyright yu-lasalon.com All Rights Reserved.
+      </small>
+    </footer>
+  </body>
+
+  <style>
+    body {
+      margin: 6vw;
+      font-family: "Noto Sans JP", sans-serif;
+    }
+
+    hr {
+      width: 10%;
+      margin: 2rem 0;
+    }
+
+    footer {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      font-size: 0.8rem;
+    }
+
+    @view-transition {
+      navigation: auto;
+    }
+  </style>
+</html>

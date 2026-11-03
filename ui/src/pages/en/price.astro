@@ -1,0 +1,153 @@
+---
+import Content from "../../layouts/en/Content.astro";
+import title from "../../assets/title.webp";
+---
+
+<Content titleImage={title}>
+  <div id="price-table">
+    <table>
+      <tbody>
+          <tr>
+            <th colspan="2">HAIR CUTTING</th>
+          </tr>
+          <tr>
+            <td>Ladies Cut &amp; Blow-Dry</td>
+            <td>£45</td>
+          </tr>
+          <tr>
+            <td>Gents Cut &amp; Finish</td>
+            <td>£35</td>
+          </tr>
+          <tr>
+            <td>Shampoo &amp; Blow-Dry</td>
+            <td>from £25</td>
+          </tr>
+          <tr>
+            <th colspan="2">COLOUR &lt;Highlights / Balayage&gt; *</th>
+          </tr>
+          <tr>
+            <td>Full Head</td>
+            <td>from £80</td>
+          </tr>
+          <tr>
+            <td>Half Head</td>
+            <td>from £60</td>
+          </tr>
+          <tr>
+            <td>T-Section</td>
+            <td>from £45</td>
+          </tr>
+          <tr>
+            <td>Toner with Colour Service</td>
+            <td>£15</td>
+          </tr>
+          <tr>
+            <td>Toner without Colour Service</td>
+            <td>£30</td>
+          </tr>
+          <tr>
+            <td>Full Head Permanent</td>
+            <td>from £50</td>
+          </tr>
+          <tr>
+            <td>Regrowth Permanent</td>
+            <td>from £40</td>
+          </tr>
+          <tr>
+            <td>Change of Colour</td>
+            <td>Price on consultation</td>
+          </tr>
+          <tr>
+            <td colspan="2">
+              *If only colour service, there will be a charge of £20 for wash and
+              blow dry
+            </td>
+          </tr>
+          <tr>
+            <th colspan="2">PERMING &lt;Straightening Perm with Ironing&gt;</th>
+          </tr>
+          <tr>
+            <td>Short hair</td>
+            <td>from £140</td>
+          </tr>
+          <tr>
+            <td>Long hair</td>
+            <td>from £160</td>
+          </tr>
+          <tr>
+            <th colspan="2">TREATMENT</th>
+          </tr>
+          <tr>
+            <td>Various</td>
+            <td>from £15</td>
+          </tr>
+          <tr>
+            <th colspan="2">KID'S</th>
+          </tr>
+          <tr>
+            <td>Under 5 years</td>
+            <td>Boys / Girls £15</td>
+          </tr>
+          <tr>
+            <td>Under 10 years</td>
+            <td>Boys / Girls £20</td>
+          </tr>
+          <tr>
+            <td>Under 15 years</td>
+            <td>Boys / Girls £25</td>
+          </tr>
+      </tbody>
+    </table>
+    <p>Student 16-29 years old : &lt;10% discount&gt; for all services.</p>
+    <p>
+      All the products for Straight Perm and Treatment imported directly from
+      Japan.
+    </p>
+    <p>Please ask for further information.</p>
+  </div>
+</Content>
+
+<style>
+  #price-table {
+    font-size: 0.8rem;
+    text-align: center;
+
+    table {
+      margin: 1rem auto;
+      border: 1px solid #ddd;
+      border-collapse: separate;
+      border-spacing: 0;
+      border-radius: 4px;
+    }
+
+    th,
+    td {
+      padding: 8px;
+    }
+
+    tr + tr > th,
+    tr + tr > td {
+      border-top: 1px solid #ddd;
+    }
+
+    th + th,
+    td + td,
+    th + td,
+    td + th {
+      border-left: 1px solid #ddd;
+    }
+
+    th {
+      background-color: #f0f0f0;
+    }
+
+    tbody tr:first-child th {
+      border-radius: 3px 3px 0 0;
+    }
+
+    p {
+      margin: 1rem auto;
+      max-width: 80%;
+    }
+  }
+</style>

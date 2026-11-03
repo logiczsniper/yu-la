@@ -1,46 +1,63 @@
-# Astro Starter Kit: Basics
+<img src="./src/assets/title-ja.webp" style="background-color:white;border-radius:12px" />
+
+<br />
+
+A bilingual website for Yu-La Salon, built with 🚀 Astro. The site provides salon
+information in English and Japanese, including services and prices, location,
+contact details, and a language-selection page.
+
+## Requirements
+
+- Node.js `>=22.23.4`
+- npm
+
+## Getting started
+
+From the `ui` directory, install dependencies and start the development server:
 
 ```sh
-npm create astro@latest -- --template basics
+npm ci
+npm run dev
 ```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+Astro prints the local development URL in the terminal.
 
-## 🚀 Project Structure
+## Commands
 
-Inside of your Astro project, you'll see the following folders and files:
+Run these commands from the `ui` directory:
+
+| Command | Description |
+| --- | --- |
+| `npm run dev` | Start the local Astro development server. |
+| `npm run build` | Build the site into `dist/`. |
+| `npm run preview` | Preview the production build locally. Run `npm run build` first. |
+| `npm run astro -- <command>` | Run an Astro CLI command, such as `npm run astro -- check`. |
+
+## Pages and languages
+
+- `/` redirects to the default language.
+- `/en/` and `/ja/` are the English and Japanese home pages.
+- Each language has `about`, `contact`, `location`, and `price` pages.
+- The default language is English. Astro's i18n routing prefixes both
+  languages and redirects to the default locale.
+
+## Project structure
 
 ```text
-/
-├── public/
-│   └── favicon.svg
-├── src
-│   ├── assets
-│   │   └── astro.svg
-│   ├── components
-│   │   └── Welcome.astro
-│   ├── layouts
-│   │   └── Layout.astro
-│   └── pages
-│       └── index.astro
-└── package.json
+src/
+  assets/       Images used by the pages
+  components/   Shared welcome, language selection, navigation, and reviews
+  icons/        SVG icons used by astro-icon
+  layouts/
+    en/         English page shell and content navigation
+    ja/         Japanese page shell and content navigation
+  pages/
+    en/         English routes
+    ja/         Japanese routes
+    index.astro Default-locale redirect
+public/         Static files served from the site root
 ```
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+Page files in `src/pages/` define the routes. English and Japanese pages use
+separate layouts to provide localized navigation, document language, and footer
+content. Shared interface elements live in `src/components/`.

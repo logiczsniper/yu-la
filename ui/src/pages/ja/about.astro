@@ -1,0 +1,45 @@
+---
+import Content from "../../layouts/ja/Content.astro";
+import title from "../../assets/title-ja.webp";
+import tools from "../../assets/tools.webp";
+---
+
+<Content titleImage={title}>
+  <div id="about-text">
+    <p>
+      Yu-laヘアサロンは<wbr />LondonのPutneyに<wbr />位置する、<wbr />
+      日本人・インターナショナルな<wbr />顧客を持つヘアサロンです。<wbr />
+      落ち着きのある<wbr />清々しい空間のもと、<wbr
+      />質の高い技術とサービスを<wbr />実感して下さい。
+    </p>
+    <p>
+      日本から直輸入した<wbr />プロダクトを用いて、<wbr />美しさを追求した<wbr
+      />
+      ヘアカット・カラー・<wbr />ストレートパーマを、<wbr />
+      幅広い年齢層の<wbr />男性・女性のお客様に<wbr />提供しております。<wbr />
+      お客様一人一人が<wbr />Happyになって頂けるような<wbr
+      />サービスを心がけております。
+    </p>
+    <p>
+      Yu-laヘアサロンで、<wbr />あなたにピッタリの<wbr />
+      ヘアスタイルを<wbr />見つけてみては<wbr />いかがでしょうか。
+    </p>
+    <p>皆様のご来店を心よりお待ちしております。</p>
+    <img src={tools.src} width="320px" alt="img" />
+  </div>
+</Content>
+
+<style>
+  #about-text {
+    font-size: 0.8rem;
+    text-align: center;
+
+    img {
+      margin-top: 1rem;
+    }
+
+    p {
+      white-space: nowrap;
+    }
+  }
+</style>

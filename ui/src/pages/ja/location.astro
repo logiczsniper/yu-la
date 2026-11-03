@@ -1,0 +1,30 @@
+---
+import Content from "../../layouts/ja/Content.astro";
+import title from "../../assets/title-ja.webp";
+import location from "../../assets/location.webp";
+---
+
+<Content titleImage={title}>
+  <div id="location-text">
+    <img src={location.src} width="320px" alt="img" />
+    <p>
+      Putney Rail Stationより徒歩5分<br />
+      East Putney Tube Stationより徒歩10分<br />
+      Putney Bridge Tube Stationより徒歩15分
+    </p>
+  </div>
+</Content>
+
+<style>
+  #location-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 0.8rem;
+    text-align: center;
+
+    img {
+      margin: 1rem 0;
+    }
+  }
+</style>

@@ -1,0 +1,135 @@
+---
+import Base from "./Base.astro";
+import Welcome from "../../components/Welcome.astro";
+import ResponsiveNav from "../../components/ResponsiveNav.astro";
+import { Icon } from "astro-icon/components";
+import title from "../../assets/title.webp";
+
+type MenuItem = {
+  href: string;
+  text: string;
+  iconName: string;
+  iconSize: number;
+  isActive: boolean;
+};
+
+const menuItems: MenuItem[] = [
+  {
+    href: "/en/about",
+    text: "About Us",
+    iconName: "info",
+    iconSize: 18,
+    isActive: Astro.url.pathname === "/en/about",
+  },
+  {
+    href: "/en/price",
+    text: "Price List",
+    iconName: "price",
+    iconSize: 17,
+    isActive: Astro.url.pathname === "/en/price",
+  },
+  {
+    href: "/en/location",
+    text: "Location",
+    iconName: "map",
+    iconSize: 18,
+    isActive: Astro.url.pathname === "/en/location",
+  },
+  {
+    href: "/en/contact",
+    text: "Contact",
+    iconName: "contact",
+    iconSize: 16,
+    isActive: Astro.url.pathname === "/en/contact",
+  },
+];
+
+const headingText = menuItems.find((item) => item.isActive)?.text || "Menu";
+---
+
+<Base>
+  <Welcome
+    titleImage={title}
+    titleAlt="TODO: EN title alt"
+    storefrontAlt="TODO: EN storefront alt"
+  />
+
+  <section id="page-container">
+    <ResponsiveNav headingText={headingText}>
+      <menu slot="menu">
+        {
+          menuItems.map((item) => (
+            <li class:list={{ active: item.isActive }}>
+              <Icon
+                width={item.iconSize}
+                height={item.iconSize}
+                name={item.iconName}
+              />
+              <a href={item.href} aria-disabled={item.isActive}>
+                {item.text}
+              </a>
+            </li>
+          ))
+        }
+      </menu>
+    </ResponsiveNav>
+
+    <section id="page">
+      <slot />
+    </section>
+  </section>
+</Base>
+
+<style>
+  #page-container {
+    display: flex;
+    gap: 1.8rem;
+    margin: 1.2rem;
+
+    #page {
+      flex-grow: 1;
+    }
+
+    nav {
+      flex-shrink: 0;
+
+      menu {
+        padding-inline-start: 0;
+        min-width: 150px;
+
+        li {
+          display: flex;
+          gap: 8px;
+          align-items: center;
+          list-style-type: none;
+          margin: 8px 0;
+          padding: 6px 10px;
+          border-radius: 4px;
+          cursor: pointer;
+
+          transition: background-color 0.3s;
+
+          a {
+            color: black;
+            font-family: serif;
+            text-decoration: none;
+            transition: font-weight 800ms;
+          }
+        }
+
+        li:hover,
+        li.active {
+          background-color: #f0f0f0;
+          cursor: default;
+        }
+      }
+    }
+  }
+
+  @media (width <= 600px) {
+    #page-container {
+      flex-direction: column;
+      gap: 0;
+    }
+  }
+</style>

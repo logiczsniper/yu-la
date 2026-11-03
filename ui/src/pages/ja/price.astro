@@ -1,0 +1,172 @@
+---
+import Content from "../../layouts/ja/Content.astro";
+import title from "../../assets/title-ja.webp";
+---
+
+<Content titleImage={title}>
+  <div id="price-table">
+    <table>
+      <tbody>
+        <tr>
+          <th colspan="2">カット</th>
+        </tr>
+        <tr>
+          <td>レディースカット＆ブロー</td>
+          <td>£45</td>
+        </tr>
+        <tr>
+          <td>メンズカット＆仕上げ</td>
+          <td>£35</td>
+        </tr>
+        <tr>
+          <td>シャンプー＆ブロー</td>
+          <td class="rough-price">£25</td>
+        </tr>
+        <tr>
+          <th colspan="2">カラー<wbr />（ハイライト／バレイヤージュ）*</th>
+        </tr>
+        <tr>
+          <td>フルヘッド</td>
+          <td class="rough-price">£80</td>
+        </tr>
+        <tr>
+          <td>ハーフヘッド</td>
+          <td class="rough-price">£60</td>
+        </tr>
+        <tr>
+          <td>Tセクション</td>
+          <td class="rough-price">£45</td>
+        </tr>
+        <tr>
+          <td>カラー施術と同時のトナー</td>
+          <td>£15</td>
+        </tr>
+        <tr>
+          <td>カラー施術なしのトナー</td>
+          <td>£30</td>
+        </tr>
+        <tr>
+          <td>フルヘッド（全体染め）</td>
+          <td class="rough-price">£50</td>
+        </tr>
+        <tr>
+          <td>リタッチ（根元染め）</td>
+          <td class="rough-price">£40</td>
+        </tr>
+        <tr>
+          <td>カラーチェンジ</td>
+          <td>要相談</td>
+        </tr>
+        <tr>
+          <td colspan="2">
+            *カラー施術のみの場合、<wbr />シャンプー＆ブロー料金として<wbr
+            />£20を頂戴いたします。
+          </td>
+        </tr>
+        <tr>
+          <th colspan="2"
+            >パーマ<wbr />
+            （アイロン仕上げのストレートパーマ）</th
+          >
+        </tr>
+        <tr>
+          <td>ショートヘア</td>
+          <td class="rough-price">£140</td>
+        </tr>
+        <tr>
+          <td>ロングヘア</td>
+          <td class="rough-price">£160</td>
+        </tr>
+        <tr>
+          <th colspan="2">トリートメント</th>
+        </tr>
+        <tr>
+          <td>各種</td>
+          <td class="rough-price">£15</td>
+        </tr>
+        <tr>
+          <th colspan="2">お子様カット</th>
+        </tr>
+        <tr>
+          <td>5歳未満（男の子・女の子）</td>
+          <td>£15</td>
+        </tr>
+        <tr>
+          <td>10歳未満（男の子・女の子）</td>
+          <td>£20</td>
+        </tr>
+        <tr>
+          <td>15歳未満（男の子・女の子）</td>
+          <td>£25</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>16～29歳の学生の方は、<wbr />すべてのサービスを10％割引いたします。</p>
+    <p>
+      ストレートパーマと<wbr />
+      トリートメントには、<wbr />
+      日本から直輸入した<wbr />
+      商品を使用しております。
+    </p>
+    <p>
+      詳細につきましては、<wbr />お気軽に
+      <a href="mailto:info@yu-lasalon.com">お問い合わせ</a>ください。
+    </p>
+  </div>
+</Content>
+
+<style>
+  #price-table {
+    font-size: 0.8rem;
+    text-align: center;
+
+    table {
+      margin: 1rem auto;
+      border: 1px solid #ddd;
+      border-collapse: separate;
+      border-spacing: 0;
+      border-radius: 4px;
+    }
+
+    th,
+    td {
+      padding: 8px;
+    }
+
+    tr + tr > th,
+    tr + tr > td {
+      border-top: 1px solid #ddd;
+    }
+
+    th + th,
+    td + td,
+    th + td,
+    td + th {
+      border-left: 1px solid #ddd;
+    }
+
+    th {
+      background-color: #f0f0f0;
+    }
+
+    tbody tr:first-child th {
+      border-radius: 3px 3px 0 0;
+    }
+
+    tr > td.rough-price:nth-child(2):after {
+      content: "〜";
+      position: absolute;
+    }
+
+    p {
+      margin: 1rem auto;
+      max-width: 80%;
+    }
+
+    td,
+    th,
+    p {
+      white-space: nowrap;
+    }
+  }
+</style>

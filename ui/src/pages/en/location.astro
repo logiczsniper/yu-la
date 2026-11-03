@@ -1,0 +1,30 @@
+---
+import Content from "../../layouts/en/Content.astro";
+import title from "../../assets/title.webp";
+import location from "../../assets/location.webp";
+---
+
+<Content titleImage={title}>
+  <div id="location-text">
+    <img src={location.src} width="320px" alt="img" />
+    <p>
+      5 mins walk from Putney Rail Station<br />
+      10 mins walk from East Putney Tube Station<br />
+      15 min walk from Putney Bridge Tube Station
+    </p>
+  </div>
+</Content>
+
+<style>
+  #location-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 0.8rem;
+    text-align: center;
+
+    img {
+      margin: 1rem 0;
+    }
+  }
+</style>
